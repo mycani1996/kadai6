@@ -18,10 +18,10 @@ rank_data = [{"rank":1,"itemName":"PC1","itemPrice":100,"itemUrl":"htts://www1"}
     ]
 )
 def test_get_data(url,word,columns,column):
-   item = Item_list()  
-   data = item.get_data(url,word,columns,column)
-    # print(data)
-   assert len(data) >= 1
+    item = Item_list()  
+    data = item.get_data(url,word,columns,column)
+    print(data)
+    assert len(data) >= 1
 
 @pytest.mark.parametrize(
     "data,init_list,columns_list", [
