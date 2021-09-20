@@ -11,7 +11,7 @@ logger= set_logger(__name__)
 SCOPE = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
 
-JSONKEY = './data/service_key.json'
+JSONKEY = './env/service_key.json'
 
 class SpreadsheetManager():
 
