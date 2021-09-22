@@ -32,9 +32,9 @@ class SpreadsheetManager():
         self.worksheet = gs.open_by_key(file_id).worksheet(sheet_name)
 
 
-    def write(self, area, data):
+    def write(self, row_s, col_s, row_f, col_f, data):
         # data:2次元配列
-        cell_list = self.worksheet.range(area)
+        cell_list = self.worksheet.range(row_s, col_s, row_f, col_f)
         items = itertools.chain.from_iterable(data)
         print(items)
         for i, value in enumerate(items):

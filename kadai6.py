@@ -44,7 +44,7 @@ class Item_list:
             for col in columns_list:
                 tmp_list.append(item[col])
             item_lists.append(tmp_list)
-        # print(item_lists)
+        print(item_lists)
 
         return item_lists
 
@@ -60,10 +60,11 @@ class Item_list:
     def put_gspread(self,data):
         ss = SpreadsheetManager()
         # 書き込み
-        range = "A1:A"+str(len(data)+1)
+        data_row = len(data)
+        data_col = len(data[0])
         print(range)
         ss.connect_by_sheetname(SPREADSHEET_ID, "item_list")
-        ss.write(range,data)
+        ss.write(1,1,data_row,data_col,data)
 
 ### メイン処理
 def main():
